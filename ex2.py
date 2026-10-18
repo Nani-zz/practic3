@@ -10,9 +10,17 @@ class Book:
         print("Year: " + self.year)
 
 class Ebook(Book):
-    def format(self, format):
-        print("Format: " + format)
+    def __init__(self, title, author, year, format):
+        super().__init__(title, author, year)
+        self.format = format
 
-book = Ebook("женщина", "Аня", "1949")
+    def info(self):
+        print("Title: " + self.title)
+        print("Author: " + self.author)
+        print("Year: " + self.year)
+        print(f"Формат: {self.format}")
+
+book = Book("Я женщина", "Аня", "1999")
+ebook = Ebook("Я женщина", "Аня", "2000", "PDF")
 book.info()
-book.format("PDF")
+ebook.info()
